@@ -1,0 +1,37 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Django stuff:
+*.log
+*.pot
+*.pyc
+*.pyo
+*.mo
+*.swp
+
+# Banco de dados
+*.sqlite3
+*.db
+
+# Mídia / arquivos enviados
+/media/
+
+# Arquivos de ambiente
+.env
+*.env
+
+# Pasta de migrações
+**/migrations/
+!**/migrations/__init__.py
+
+# Configurações específicas de IDEs
+.vscode/
+
+# ambiente virtual
+venv/
+.env
