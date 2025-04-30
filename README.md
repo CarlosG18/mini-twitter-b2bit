@@ -28,6 +28,29 @@ You are tasked with implementing a scalable REST API for a simple social media p
         Failing this criteria will eliminate you immediately
 
 
+🔋 [TC.3.2] Caching & Scalability:
+
+        Implement caching (e.g., using Redis) for the user feed or other high-read endpoints to ensure scalability.
+
+        bonus 1.: followers count in the user's profile
+
+        bonus 2.: like count for each post
+
+🔁 Asynchronous Tasks:
+
+        Use Celery or other task queues to handle tasks asynchronously (e.g., sending email notifications when a user follows another user).
+
+🔎 Search Feature:
+
+        Add a search functionality to allow users to find posts by keyword or hashtags
+
+🚀 CI/CD:
+
+        Set up basic CI/CD to run automated tests (using tools like GitLab CI, GitHub Actions, or Jenkins).
+
+se eu conseguir implementar tudo eu penso nos testes
+
+
 ENDPOINTS
 
 👨🏼‍🏫 USE CASES
