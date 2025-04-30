@@ -2,14 +2,10 @@ services:
   database:
     container_name: database-postgres
     image: postgres:latest
-    networks:
-      network-database:
-        ipv4_address: 172.28.0.2
-
-networks:
-  network-database:
-    driver: bridge
-    ipam:
-      config:
-        - subnet: 172.28.0.0/24
+    environment:          
+      - POSTGRES_DB=${DB_NAME}   
+      - POSTGRES_USER=${DB_USER}        
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+    ports:
+      - 5432:5432
 

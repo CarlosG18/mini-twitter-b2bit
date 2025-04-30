@@ -54,3 +54,7 @@ CASE 4: Viewing Feed
     The user can view a paginated list of posts from the users they follow.
 
     Posts should be ordered by creation time, from most recent to oldest.
+
+## Database Modeling
+
+![Image on modeling of database](./imgs/modelagem.png)

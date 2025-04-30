@@ -26,7 +26,9 @@ __pycache__/
 *.env
 
 # Pasta de migrações
-**/migrations/
+**/migrations/*.py
+**/migrations/*.pyc
+**/migrations/__pycache__/
 !**/migrations/__init__.py
 
 # Configurações específicas de IDEs
@@ -34,4 +36,4 @@ __pycache__/
 
 # ambiente virtual
 venv/
-.env
+env/
