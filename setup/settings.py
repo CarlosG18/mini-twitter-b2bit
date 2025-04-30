@@ -14,6 +14,7 @@ from pathlib import Path
 from decouple import config, Csv
 from dj_database_url import parse as db_url
 import os
+from datetime import timedelta
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -39,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'mini_twitter',
+    'drf_spectacular',
 ]
 
 MIDDLEWARE = [
@@ -123,6 +125,26 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# DOCUMENTATION CONFIGURATION - DRF_SPECTACULAR
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Mini Twitter API',
+    'DESCRIPTION': 'Api que simula o fluxo da rede social Twitter',
+    'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': False,
+}
+
 # DRF CONFIGURATIONS
+REST_FRAMEWORK = {
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+}
 
-
+# JWT CONFIG
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=int(config('ACCESS_TOKEN_LIFETIME'))),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=int(config('REFRESH_TOKEN_LIFETIME'))),
+    "ROTATE_REFRESH_TOKENS": config('ROTATE_REFRESH_TOKENS'),
+    "BLACKLIST_AFTER_ROTATION": config('BLACKLIST_AFTER_ROTATION'),
+    "UPDATE_LAST_LOGIN": config('UPDATE_LAST_LOGIN'),
+    "ALGORITHM": config('ALGORITHM'),
+    "AUTH_HEADER_TYPES": ("Bearer",),
+}
