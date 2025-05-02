@@ -120,6 +120,12 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static') 
+
+MEDIA_URL = 'media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
@@ -128,7 +134,23 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # DOCUMENTATION CONFIGURATION - DRF_SPECTACULAR
 SPECTACULAR_SETTINGS = {
     'TITLE': 'Mini Twitter API',
-    'DESCRIPTION': 'Api que simula o fluxo da rede social Twitter',
+    'DESCRIPTION': (
+        '🚀 A RESTful API that simulates the core features of a social network like Twitter.\n\n'
+        '### 🔍 Key Features:\n'
+        '- 📜 **Feed user´s** displaying user posts\n'
+        '- ✍️ **Post CRUD operations** (create, read, update, delete)\n'
+        '- ❤️ **Like posts**\n'
+        '- 🔐 **JWT Authentication** with token generation and refresh\n'
+        '- 👥 **User registration and listing**\n'
+        '- 🤝 **Follow/unfollow users**\n\n'
+        'Built with Django REST Framework + JWT Authentication, this API is great for learning, testing, and prototyping social media functionalities.\n\n'
+        '### Contacts:\n'
+    ),
+    'CONTACT': {
+        'name': 'Carlos Gabriel Medeiros da Silva',
+        'email': 'c.gabriel.abc18@gmail.com',
+        'url': 'https://www.linkedin.com/in/carlosg18/',
+    },
     'VERSION': '1.0.0',
     'SERVE_INCLUDE_SCHEMA': False,
 }
@@ -144,7 +166,6 @@ SIMPLE_JWT = {
     "REFRESH_TOKEN_LIFETIME": timedelta(days=int(config('REFRESH_TOKEN_LIFETIME'))),
     "ROTATE_REFRESH_TOKENS": config('ROTATE_REFRESH_TOKENS'),
     "BLACKLIST_AFTER_ROTATION": config('BLACKLIST_AFTER_ROTATION'),
-    "UPDATE_LAST_LOGIN": config('UPDATE_LAST_LOGIN'),
     "ALGORITHM": config('ALGORITHM'),
     "AUTH_HEADER_TYPES": ("Bearer",),
 }
