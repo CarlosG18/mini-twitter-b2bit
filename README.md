@@ -1,83 +1,159 @@
-# mini-twitter
-You are tasked with implementing a scalable REST API for a simple social media platform ("Mini-Twitter")
+# 📱 Mini-Twitter API
 
-[TC.1] API Development:
+A practical project developed as part of the **B2Bit Trainee selection process**, where a **RESTful API** was built to replicate basic functionalities of a social media platform similar to **Twitter**.
 
-        Use Python 3 and a Python web framework of your choice (Django REST Framework preferred).
+---
 
-        Implement the API following RESTful design principles.
+## 🚀 Project Overview
 
-🔐 [TC.2] Authentication:
+The objective of this project is to implement a scalable and well-structured REST API for a simplified version of Twitter, supporting user registration, authentication, posting, following/unfollowing users, and a personalized feed.
 
-        Use JWT (JSON Web Tokens) for user authentication and session management.
+---
 
-💽 [TC.3.1] Database:
+## ✅ Requirements
 
-        Use a relational database (preferably PostgreSQL).
+### \[TC.1] API Development
 
-        Ensure the database design follows best practices, with attention to normalization and performance optimization.
+* Language: **Python 3**
+* Framework: **Django REST Framework**
+* Design: Follows RESTful design principles
 
-📄 [TC.4.] Pagination
+### \[TC.2] 🔐 Authentication
 
-        Implement pagination for the posts list
+* Uses **JWT (JSON Web Tokens)** for authentication and session control
 
-📂 [TC.8] Git
+### \[TC.3.1] 💽 Database
 
-        Your project must be stored in a public git repository
+* **PostgreSQL** as the relational database
+* Follows normalization and performance best practices
 
-        Failing this criteria will eliminate you immediately
+### \[TC.4] 📄 Pagination
 
+* Implements **pagination** for the feed endpoint
 
-🔋 [TC.3.2] Caching & Scalability:
+### \[TC.6] 📝 Documentation:
 
-        Implement caching (e.g., using Redis) for the user feed or other high-read endpoints to ensure scalability.
+* Implements API documentation using Swagger.
 
-        bonus 1.: followers count in the user's profile
+### \[TC.7] 🐳 Docker:
 
-        bonus 2.: like count for each post
+* The project should be containerized using **Docker**. Provide a `Dockerfile` and `docker-compose.yml` for easy setup.
 
-🔁 Asynchronous Tasks:
+### \[TC.8] 📂 Git
 
-        Use Celery or other task queues to handle tasks asynchronously (e.g., sending email notifications when a user follows another user).
+* The project is available on a **public Git repository**
 
-🔎 Search Feature:
+---
 
-        Add a search functionality to allow users to find posts by keyword or hashtags
+## 🐳 Running with Docker
 
-🚀 CI/CD:
+> ⚠️ could not get around the synchronization issue between Django and database startup, so for docker to work the services must be started **in order**:
 
-        Set up basic CI/CD to run automated tests (using tools like GitLab CI, GitHub Actions, or Jenkins).
+1. **Build the containers**:
 
-se eu conseguir implementar tudo eu penso nos testes
+```bash
+docker compose build
+```
 
+2. **Start the database service**:
 
-ENDPOINTS
+```bash
+docker compose up database -d
+```
 
-👨🏼‍🏫 USE CASES
-CASE 1: User Registration
+3. **Start the application**:
 
-    Users should be able to sign up via the API by providing an email, username, and password.
+```bash
+docker compose up app -d
+```
 
-    Use JWT to handle authentication for login and session management.
+## 🔐 Exemplo de `.env`
 
-CASE 2: Post Creation
+Crie um arquivo `.env` na raiz do projeto com as seguintes variáveis:
 
-    Authenticated users can create a post with text and one image as content
+```env
+DEBUG=True
+SECRET_KEY=uma-chave-secreta-bem-forte
+ALLOWED_HOSTS=localhost,127.0.0.1
 
-    Posts can be liked by other users.
+POSTGRES_DB=mini_twitter
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=postgres
+POSTGRES_HOST=database
+POSTGRES_PORT=5432
 
-CASE 3: Follow/Unfollow User
+DJANGO_SUPERUSER_USERNAME=admin
+DJANGO_SUPERUSER_EMAIL=admin@example.com
+DJANGO_SUPERUSER_PASSWORD=admin123
+```
 
-    Users should be able to follow or unfollow others.
+---
 
-    The feed should only show posts from users the authenticated user follows.
+## 📚 Use Cases
 
-CASE 4: Viewing Feed
+### 👤 CASE 1: User Registration & Login
 
-    The user can view a paginated list of posts from the users they follow.
+* Users can register using `username`, `email`, and `password`
+* JWT is used to manage authentication and sessions
 
-    Posts should be ordered by creation time, from most recent to oldest.
+### 📝 CASE 2: Create Post
 
-## Database Modeling
+* Authenticated users can create text posts with an optional image
+* Posts can receive **likes** from other users
 
-![Image on modeling of database](./imgs/modelagem.png)
+### 🤝 CASE 3: Follow / Unfollow
+
+* Users can follow or unfollow others
+* Feed displays only posts from **followed users**
+
+### 📰 CASE 4: View Feed
+
+* Authenticated users can view a **paginated** feed
+* Posts are **ordered by most recent creation time**
+
+---
+
+## 🗃️ Database Modeling
+
+<p align="center">
+  <img src="./imgs/modelagem.svg" alt="Database_Modeling" width="1300">
+</p>
+
+---
+
+## 📡 Implemented Endpoints
+
+Below is a list of the available API endpoints exposed by this application:
+
+### 🔐 Authentication
+
+| Method | Endpoint              | Description       |
+| ------ | --------------------- | ----------------- |
+| POST   | `/api/token/`         | Obtain JWT token  |
+| POST   | `/api/token/refresh/` | Refresh JWT token |
+
+### 👤 User Management
+
+| Method | Endpoint                   | Description            |
+| ------ | -------------------------- | ---------------------- |
+| GET    | `/api/users/registration/` | List registered users  |
+| POST   | `/api/users/registration/` | Register new user      |
+| POST   | `/api/users/follow/{id}/`  | Follow/unfollow a user |
+
+### 📝 Posts
+
+| Method | Endpoint                | Description             |
+| ------ | ----------------------- | ----------------------- |
+| GET    | `/api/posts/`           | List all posts          |
+| POST   | `/api/posts/`           | Create a new post       |
+| GET    | `/api/posts/{id}/`      | Retrieve a post by ID   |
+| PUT    | `/api/posts/{id}/`      | Replace a post          |
+| PATCH  | `/api/posts/{id}/`      | Partially update a post |
+| DELETE | `/api/posts/{id}/`      | Delete a post           |
+| POST   | `/api/posts/{id}/like/` | Like or unlike a post   |
+
+### 📰 Feed
+
+| Method | Endpoint     | Description                               |
+| ------ | ------------ | ----------------------------------------- |
+| GET    | `/api/feed/` | Get posts from followed users (paginated) |
