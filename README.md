@@ -72,19 +72,23 @@ docker compose up app -d
 Crie um arquivo `.env` na raiz do projeto com as seguintes variáveis:
 
 ```env
+# SYSTEM CONFIG
 DEBUG=True
 SECRET_KEY=uma-chave-secreta-bem-forte
 ALLOWED_HOSTS=localhost,127.0.0.1
 
-POSTGRES_DB=mini_twitter
-POSTGRES_USER=postgres
-POSTGRES_PASSWORD=postgres
-POSTGRES_HOST=database
-POSTGRES_PORT=5432
+# DATABASE VARIABLES
+DATABASE_URL=postgres://postgres:postgres@database:5432/mini_twitter
+DB_NAME=mini_twitter
+DB_USER=postgres
+DB_PASSWORD=postgres
 
-DJANGO_SUPERUSER_USERNAME=admin
-DJANGO_SUPERUSER_EMAIL=admin@example.com
-DJANGO_SUPERUSER_PASSWORD=admin123
+# JWT VARIABLES
+ACCESS_TOKEN_LIFETIME=30
+REFRESH_TOKEN_LIFETIME=1
+ROTATE_REFRESH_TOKENS=True
+BLACKLIST_AFTER_ROTATION=True
+ALGORITHM='HS256'
 ```
 
 ---
