@@ -157,3 +157,21 @@ Below is a list of the available API endpoints exposed by this application:
 | Method | Endpoint     | Description                               |
 | ------ | ------------ | ----------------------------------------- |
 | GET    | `/api/feed/` | Get posts from followed users (paginated) |
+
+---
+
+## 📚 Documentação da API e Deploy
+
+O deploy da aplicação foi realizado na plataforma PythonAnywhere, sem uso de Docker
+
+Toda a API foi documentada utilizando o **Swagger**, uma ferramenta interativa que permite visualizar, testar e entender todos os endpoints disponíveis.
+
+📎 **Acesse aqui a documentação interativa:**
+[https://minitwitter.pythonanywhere.com/api/docs/]https://minitwitter.pythonanywhere.com/api/docs/)
+
+A documentação cobre todos os endpoints disponíveis, incluindo:
+
+* Registro e autenticação de usuários via JWT
+* Criação, listagem e curtida de posts
+* Sistema de seguidores (follow/unfollow)
+* Visualização de feed paginado
