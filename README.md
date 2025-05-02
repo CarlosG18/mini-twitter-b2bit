@@ -167,7 +167,7 @@ O deploy da aplicação foi realizado na plataforma PythonAnywhere, sem uso de D
 Toda a API foi documentada utilizando o **Swagger**, uma ferramenta interativa que permite visualizar, testar e entender todos os endpoints disponíveis.
 
 📎 **Acesse aqui a documentação interativa:**
-[https://minitwitter.pythonanywhere.com/api/docs/]https://minitwitter.pythonanywhere.com/api/docs/)
+[https://minitwitter.pythonanywhere.com/api/docs/](https://minitwitter.pythonanywhere.com/api/docs/)
 
 A documentação cobre todos os endpoints disponíveis, incluindo:
 
