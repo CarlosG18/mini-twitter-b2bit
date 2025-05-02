@@ -1,0 +1,622 @@
+{
+	"info": {
+		"_postman_id": "3e239685-4732-47c7-b817-d3d10f9725ff",
+		"name": "mini_twitter_b2bit",
+		"description": "enpoints de teste para a api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30952114"
+	},
+	"item": [
+		{
+			"name": "[TESTES] - ENDPOINTS DE POSTS",
+			"item": [
+				{
+					"name": "create post 1",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ2MjA3Mzk3LCJpYXQiOjE3NDYyMDU1OTcsImp0aSI6ImM3ZDc5NzQ5ZDVlNjQ4NDhiOWM3MzI5MjRhZDc3ZjhmIiwidXNlcl9pZCI6MX0.o9FNEZUOQuPh_gNfDID5zLE7yQp5bluTYNUzDzRpFmw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Me esqueceram em casa!",
+									"type": "text"
+								},
+								{
+									"key": "body",
+									"value": "Minha mãe me deixou sozinho em caso enquanto minha familia tá passando ferias e só vai voltar daqui a 3 dias...",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "postman-cloud:///1f027788-e193-41e0-a98c-d5a8b2071049"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}posts/",
+							"host": [
+								"{{base_url}}posts"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create post 2",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ2MjEyMjI0LCJpYXQiOjE3NDYyMDg3ODgsImp0aSI6IjNkNGNhMWEwNTZmZDRmYjE5NzAzZTQzOTM2MjkxMTljIiwidXNlcl9pZCI6Mn0.PHUdWS6YqxoWtmUdqK5fnE71LYNgYkCr1hYYfA1xRnE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Socooooroo!",
+									"type": "text"
+								},
+								{
+									"key": "body",
+									"value": "tem um cara atras de mim!!!",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "postman-cloud:///1f02782f-81f0-46a0-beca-bfca1d992de0"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}posts/",
+							"host": [
+								"{{base_url}}posts"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "like",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ2MjEyMjI0LCJpYXQiOjE3NDYyMDg3ODgsImp0aSI6IjNkNGNhMWEwNTZmZDRmYjE5NzAzZTQzOTM2MjkxMTljIiwidXNlcl9pZCI6Mn0.PHUdWS6YqxoWtmUdqK5fnE71LYNgYkCr1hYYfA1xRnE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "vamos para o porto",
+									"type": "text"
+								},
+								{
+									"key": "body",
+									"value": "rapaz estou ansioso pq tem algumas coisas que n estao definidas",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "postman-cloud:///1f026941-9451-4b20-83ff-dc3c8f0f3006"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}posts/1/like/",
+							"host": [
+								"{{base_url}}posts"
+							],
+							"path": [
+								"1",
+								"like",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "put post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ2MjA3Mzk3LCJpYXQiOjE3NDYyMDU1OTcsImp0aSI6ImM3ZDc5NzQ5ZDVlNjQ4NDhiOWM3MzI5MjRhZDc3ZjhmIiwidXNlcl9pZCI6MX0.o9FNEZUOQuPh_gNfDID5zLE7yQp5bluTYNUzDzRpFmw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "vamos para o porto",
+									"type": "text"
+								},
+								{
+									"key": "body",
+									"value": "rapaz estou ansioso pq tem algumas coisas que n estao definidas",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "postman-cloud:///1f026941-9451-4b20-83ff-dc3c8f0f3006"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}posts/1/",
+							"host": [
+								"{{base_url}}posts"
+							],
+							"path": [
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "patch post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ2MjA3Mzk3LCJpYXQiOjE3NDYyMDU1OTcsImp0aSI6ImM3ZDc5NzQ5ZDVlNjQ4NDhiOWM3MzI5MjRhZDc3ZjhmIiwidXNlcl9pZCI6MX0.o9FNEZUOQuPh_gNfDID5zLE7yQp5bluTYNUzDzRpFmw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Me esqueceram em casa!",
+									"type": "text"
+								},
+								{
+									"key": "body",
+									"value": "Minha mãe me deixou sozinho em caso enquanto minha familia tá passando ferias e só vai voltar daqui a 3 dias...",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "postman-cloud:///1f026941-9451-4b20-83ff-dc3c8f0f3006"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}posts/1/",
+							"host": [
+								"{{base_url}}posts"
+							],
+							"path": [
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listagem de posts do user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}posts/",
+							"host": [
+								"{{base_url}}posts"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Descrição\n\nEssa coleção contém endpoints dedicados ao gerenciamento de posts, permitindo operações completas de CRUD (Create, Read, Update, Delete), além da funcionalidade de curtir e descurtir publicações. Ideal para testes de funcionalidades básicas de uma API de blog ou rede social.\n\n**Endpoints disponíveis:**\n\n- `GET /api/posts/`: lista todas as postagens.\n    \n- `POST /api/posts/`: cria uma nova postagem.\n    \n- `GET /api/posts/{id}/`: recupera uma postagem específica pelo ID.\n    \n- `PUT /api/posts/{id}/`: substitui completamente uma postagem.\n    \n- `PATCH /api/posts/{id}/`: atualiza parcialmente uma postagem.\n    \n- `DELETE /api/posts/{id}/`: remove uma postagem.\n    \n- `POST /api/posts/{id}/like/`: alterna entre curtir e descurtir uma postagem.",
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ2MjEyMjI0LCJpYXQiOjE3NDYyMDg3ODgsImp0aSI6IjNkNGNhMWEwNTZmZDRmYjE5NzAzZTQzOTM2MjkxMTljIiwidXNlcl9pZCI6Mn0.PHUdWS6YqxoWtmUdqK5fnE71LYNgYkCr1hYYfA1xRnE",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "[TESTES] - LOGIN",
+			"item": [
+				{
+					"name": "login - DenisPimentinha",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"DenisPimentinha\",\n  \"password\": \"denis123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}token/",
+							"host": [
+								"{{base_url}}token"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login - ScoobyDoo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"ScoobyDoo\",\n  \"password\": \"scooby123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}token/",
+							"host": [
+								"{{base_url}}token"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "refresh",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc0NjI5NTE4OCwiaWF0IjoxNzQ2MjA4Nzg4LCJqdGkiOiJlNzhlYWQ3YTMwZjA0ODI0Yjk0N2QxYmM0ZWQ4ZGUyZiIsInVzZXJfaWQiOjJ9.Y-afkJeHhbqHwv3oufOFisBXxg5o9Hj0AuFPXKwKWs4\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}token/refresh/",
+							"host": [
+								"{{base_url}}token"
+							],
+							"path": [
+								"refresh",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "[TESTES] - ENDPOINT DO USER",
+			"item": [
+				{
+					"name": "follow/unfollow",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ2MjEyMjc0LCJpYXQiOjE3NDYyMTA0NzQsImp0aSI6ImUwYjRmODg4NGMwZjRjZmRiNDhiNDkwZjIxNzU5N2ViIiwidXNlcl9pZCI6MX0.BUMeYcrIkFEZjF-D1y_c5NmHwjkt-IVcbczLMhOyQjk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}users/follow/2/",
+							"host": [
+								"{{base_url}}users"
+							],
+							"path": [
+								"follow",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registration of user - DenisPimentinha",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"user\": {\r\n    \"username\": \"DenisPimentinha\",\r\n    \"email\": \"denis123@gmail.com\",\r\n    \"password\": \"denis123\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}users/registration/",
+							"host": [
+								"{{base_url}}users"
+							],
+							"path": [
+								"registration",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registration of user - ScoobDoo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"user\": {\r\n    \"username\": \"ScoobyDoo\",\r\n    \"email\": \"scooby@gmail.com\",\r\n    \"password\": \"scooby123\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}users/registration/",
+							"host": [
+								"{{base_url}}users"
+							],
+							"path": [
+								"registration",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listagem de usuarios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}users/registration/",
+							"host": [
+								"{{base_url}}users"
+							],
+							"path": [
+								"registration",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "**Descrição**  \n  \nEssa coleção reúne endpoints relacionados ao gerenciamento de usuários na plataforma. É possível registrar novos usuários, listar os usuários já registrados e seguir ou deixar de seguir outros usuários, simulando funcionalidades típicas de redes sociais.\n\n**Endpoints disponíveis:**\n\n- `GET /api/users/registration/`: lista todos os usuários registrados.\n    \n- `POST /api/users/registration/`: registra um novo usuário.\n    \n- `POST /api/users/follow/{id}/`: segue ou deixa de seguir um usuário específico.",
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ2MjEyMjc0LCJpYXQiOjE3NDYyMTA0NzQsImp0aSI6ImUwYjRmODg4NGMwZjRjZmRiNDhiNDkwZjIxNzU5N2ViIiwidXNlcl9pZCI6MX0.BUMeYcrIkFEZjF-D1y_c5NmHwjkt-IVcbczLMhOyQjk",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "[TESTES] - ENDPOINT DO FEED",
+			"item": [
+				{
+					"name": "Feed do user logado",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ2MjEyMjc0LCJpYXQiOjE3NDYyMTA0NzQsImp0aSI6ImUwYjRmODg4NGMwZjRjZmRiNDhiNDkwZjIxNzU5N2ViIiwidXNlcl9pZCI6MX0.BUMeYcrIkFEZjF-D1y_c5NmHwjkt-IVcbczLMhOyQjk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}feed/",
+							"host": [
+								"{{base_url}}feed"
+							],
+							"path": [
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "**Descrição**\n\nEndpoint para listar os Posts dos usuarios ao qual o usuario logado segue, contendo paginação de 5 posts por pagina.\n\n**Endpoints disponíveis:**\n\n- `GET /api/feed/`: lista todos os posts dos usuários que o usuario logado segue.",
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ2MjEwMDQyLCJpYXQiOjE3NDYyMDgyMjEsImp0aSI6ImI5OTBkMDQxM2M4MjQyN2VhNjc5NzMyYjZiNThkYTc1IiwidXNlcl9pZCI6MX0.3PF9ych0cu68X88T-ebBKsB4dRO-wH6KUIhtMi5ADhA",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "https://minitwitter.pythonanywhere.com/api/",
+			"type": "string"
+		}
+	]
+}
